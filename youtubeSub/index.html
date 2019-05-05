@@ -1,0 +1,50 @@
+<html>
+    <head>
+            <meta charset="UTF-8">
+            <meta name="description" content="Free Web tutorials">
+            <meta name="keywords" content="HTML,CSS,XML,JavaScript">
+            <meta name="author" content="John Doe">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Youtube subcount of PewDiePie and Tseries | Rohit Saini</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/themes/odometer-theme-default.min.css" />
+
+        <style>
+            .live_sub_count.odometer {
+                font-size: 50px;
+
+            }
+        </style>
+    </head>
+
+    <body> 
+
+                <div id="pewDiePie">
+                    <h2>PewDiePie</h2>
+                    <p>
+                        <strong>Subscribe count : </strong>
+                        <div class="live_sub_count">0</div>
+                    </p>
+
+                </div>
+            <hr />
+
+            <div id="tseries">
+                    <h2>T-series</h2>
+                    <p>
+                        <strong>Subscribe count : </strong>
+                        <div class="live_sub_count">0</div>
+                    </p>
+
+                   
+
+                </div>
+            <hr />
+
+            <p>&copy <a href="#", target="_blank">StillHungry</a> || sidsaini1196@gmail.com</p>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/odometer.js/0.4.8/odometer.min.js"></script>
+       <script>
+        var key="AIzaSyAk5kNkAJGGZiRbPrK9VMldNKHvdCRC8rw",PewDiePieSubCount=new Odometer({el:document.querySelector("#PewDiePie .live_sub_count"),format:",ddd",theme:"default"}),tseriesSubCount=new Odometer({el:document.querySelector("#tseries .live_sub_count"),format:",ddd",theme:"default"});function getYoutubeChannelData(e){var t="https://www.googleapis.com/youtube/v3/channels?part=statistics&forUsername="+e+"&key="+key;$.getJSON(t,function(t){window[e+"SubCount"].update(t.items[0].statistics.subscriberCount)})}setInterval(()=>{getYoutubeChannelData("PewDiePie"),getYoutubeChannelData("tseries")},3e3),console.log("why are you checking my console, contact me : sidsaini1196@gmail.com");</script>
+    </body>
+</html>
